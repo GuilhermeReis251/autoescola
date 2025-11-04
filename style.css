@@ -1,0 +1,235 @@
+    :root{
+      /* PRETO + DOURADO: palette principal */
+      --bg:#040404;          /* fundo geral (preto profundo) */
+      --card:#0b0b0b;        /* cartões ligeiramente mais claros */
+      --muted:#bfa76a;       /* texto secundário (dourado suave) */
+      --text:#f7f3e8;        /* texto principal (off-white quente) */
+      --primary:#d4af37;     /* dourado principal */
+      --primary-600:#b58f2a; /* dourado escuro */
+      --accent:#e0bf5a;      /* destaque dourado */
+      --success:#10b981;     /* verde */
+      --danger:#ef4444;      /* vermelho */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}html,body{margin:0;scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#070707);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;background:rgba(11,18,32,.75);backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid rgba(255,255,255,.05)}
+    /* usar borda mais quente no header para combinar com o dourado (leve) */
+    header{border-bottom-color:rgba(224,191,90,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .brand .logo{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%,var(--accent),#b07e18 60%,#8b660f);
+      color:#0b0b0b; /* texto/emoji contrastando com dourado */
+    }
+    .brand span{font-family:Poppins,Inter,sans-serif;font-size:1.05rem}
+    nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+    nav a{opacity:.9}
+    nav a:hover{opacity:1;color:var(--accent)}
+    .cta{display:flex;gap:10px;align-items:center}
+    .btn{border:0;border-radius:999px;padding:10px 16px;font-weight:600;cursor:pointer}
+    /* Botões principais em dourado (texto escuro para contraste sobre dourado) */
+    .btn-primary{background:linear-gradient(90deg,var(--primary),#e0bf5a);color:#0b0b0b;box-shadow:0 6px 18px rgba(208,168,70,.12)}
+    .btn-primary:hover{filter:brightness(1.03)}
+    .btn-outline{background:transparent;color:var(--text);border:1px solid rgba(224,191,90,.12)}
+    .menu-toggle{display:none}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero-inner{display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;padding:56px 0 28px}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:.9rem;color:var(--muted)}
+    h1{font-family:Poppins,Inter,sans-serif;font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:16px 0 12px}
+    .lead{font-size:1.05rem;color:#c9d8ef;max-width:60ch}
+    .hero-card{background:linear-gradient(180deg,var(--card),#0a0a0a);border-color:rgba(224,191,90,.04);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+    .hero-grid .tile{padding:14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .check{color:var(--success);font-weight:700;margin-right:6px}
+
+    /* Sections */
+    section{padding:70px 0}
+    .section-title{font-family:Poppins,Inter,sans-serif;font-size:2rem;margin:0 0 12px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+
+    /* Features */
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,var(--card),#0b1830);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:8px 0 6px}
+    .chip{display:inline-block;background:rgba(255,255,255,.08);padding:4px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;font-size:.85rem;color:var(--muted)}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price{font-size:2rem;font-weight:800}
+    .price small{font-size:.9rem;color:var(--muted);font-weight:600}
+    .highlight{outline:2px solid var(--accent)}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{position:relative;padding:18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+    .step .num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(90deg,var(--accent),#f59e0b);color:#111;font-weight:800;margin-bottom:10px}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .t{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:18px;border-radius:14px}
+
+    /* FAQ */
+    details{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:14px;border-radius:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+
+    /* Contact */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form .full{grid-column:1/-1}
+    label{font-size:.9rem;color:var(--muted)}
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#0b1529;color:var(--text)}
+    textarea{min-height:110px}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(224,191,90,.04);padding:26px 0;color:#dcd1a1}
+
+    /* Floating WhatsApp */
+    .wa{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#0b0b0b;border-radius:999px;padding:12px 16px;font-weight:700;box-shadow:0 10px 24px rgba(208,168,70,.08);z-index:60}
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .hero-inner{grid-template-columns:1fr;gap:18px}
+      .grid-3,.pricing,.steps,.testimonials{grid-template-columns:1fr;}
+      nav ul{position:fixed;inset:64px 14px auto 14px;display:none;flex-direction:column;background:rgba(11,18,32,.96);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.06)}
+      nav ul.show{display:flex}
+      .menu-toggle{display:inline-flex;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--text);padding:8px 12px;border-radius:10px}
+      .cta{display:none}
+    }
+
+    /* Subtle animations */
+    .reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+    /* ===== Hover e micro-interações douradas ===== */
+
+/* Preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary, .card, .hero-grid .tile, .wa, nav a { transition: none; animation: none; }
+}
+
+/* 1) Brilho metálico sutil para o botão primário */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s;
+}
+.btn-primary::after{
+  content: "";
+  position: absolute;
+  left: -60%;
+  top: -40%;
+  width: 220%;
+  height: 180%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.02) 100%);
+  transform: rotate(-25deg) translateX(0);
+  transition: transform .8s cubic-bezier(.2,.9,.2,1);
+  pointer-events: none;
+  filter: blur(10px);
+  mix-blend-mode: overlay;
+  opacity: 0;
+}
+.btn-primary:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgba(212,175,55,0.12);
+}
+.btn-primary:hover::after{
+  transform: rotate(-25deg) translateX(30%);
+  opacity: 1;
+}
+
+/* 2) Card hover: leve elevação + glow dourado */
+.card {
+  transition: transform .25s cubic-bezier(.2,.9,.2,1), box-shadow .25s, border-color .25s;
+  will-change: transform;
+}
+.card:hover{
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.45), 0 0 18px rgba(212,175,55,0.06);
+  border-color: rgba(224,191,90,0.14);
+}
+
+/* 3) Hero tiles hover: glow + shift */
+.hero-grid .tile {
+  transition: transform .22s ease, box-shadow .22s ease, background .22s;
+  cursor: default;
+}
+.hero-grid .tile:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-color: rgba(224,191,90,0.08);
+}
+
+/* 4) Nav links: cor + underlay animado */
+nav a {
+  position: relative;
+  transition: color .18s ease;
+}
+nav a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg,var(--primary),var(--accent));
+  border-radius: 6px;
+  transition: width .28s cubic-bezier(.2,.9,.2,1);
+}
+nav a:hover::after{ width: 60%; }
+nav a:focus{ outline: 3px solid rgba(212,175,55,0.18); outline-offset: 4px; }
+
+/* 5) Testimonial / tile subtle highlight */
+.t, .tile {
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
+}
+.t:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45), 0 0 12px rgba(212,175,55,0.04);
+  border-color: rgba(224,191,90,0.08);
+}
+
+/* 6) Floating WhatsApp button: pulse & lift */
+.wa {
+  transition: transform .18s ease, box-shadow .18s ease, background .18s;
+}
+.wa:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(208,168,70,0.15);
+  background: linear-gradient(90deg,var(--primary),var(--accent));
+}
+
+/* 7) Inputs / buttons focus (acessibilidade) */
+input:focus, select:focus, textarea:focus, button:focus, .btn:focus {
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.07);
+  outline: none;
+}
+
+/* 8) Pequeno efeito "shine" periódico opcional (desligável por acessibilidade) */
+@keyframes subtle-shine {
+  0%{ transform: translateX(-100%); opacity:0 }
+  50%{ opacity:0.6 }
+  100%{ transform: translateX(100%); opacity:0 }
+}
+.btn-primary[data-shine="true"]::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(-100%);
+  animation: subtle-shine 5s linear infinite;
+  mix-blend-mode: overlay;
+  opacity:0.0;
+}
+@media (prefers-reduced-motion: reduce){
+  .btn-primary::after, .btn-primary[data-shine="true"]::before { animation: none; transition: none; }
+}
